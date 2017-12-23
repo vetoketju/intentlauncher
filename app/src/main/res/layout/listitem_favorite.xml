@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.villevalta.intentlauncher.model.Favorite" />
+
+        <import type="com.villevalta.intentlauncher.UtilsKt" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:foreground="?attr/selectableItemBackground"
+
+        android:padding="8dp">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/actions_wrap"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text='@{UtilsKt.ifEmpty(item.name, "Unnamed")}'
+                tools:text="Shortcut name" />
+
+            <TextView
+                android:id="@+id/label_action"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{item.action}"
+                tools:text="action" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{item.uri}"
+                android:textStyle="italic"
+                tools:text="uri" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/actions_wrap"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/action_open_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_more_vert_black_24dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+            <android.support.v7.widget.ActionMenuView
+                android:id="@+id/actions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:favorite="@{item}" />
+
+        </FrameLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

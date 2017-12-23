@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Intent launcher</string>
+    <string name="title_home">Favorites</string>
+    <string name="title_dashboard">Launch</string>
+    <string name="title_notifications">History</string>
+    <string name="launch">Launch</string>
+    <string name="unfavorite">unfavorite</string>
+    <string name="favorite">favorite</string>
+    <string name="remove">remove</string>
+    <string name="edit">edit</string>
+    <string-array name="intent_actions">
+        <item>ACTION_VIEW</item>
+        <item>ACTION_MAIN</item>
+        <item>ACTION_ATTACH_DATA</item>
+        <item>ACTION_EDIT</item>
+        <item>ACTION_PICK</item>
+        <item>ACTION_CHOOSER</item>
+        <item>ACTION_GET_CONTENT</item>
+        <item>ACTION_DIAL</item>
+        <item>ACTION_CALL</item>
+        <item>ACTION_SEND</item>
+        <item>ACTION_SENDTO</item>
+        <item>ACTION_ANSWER</item>
+        <item>ACTION_INSERT</item>
+        <item>ACTION_DELETE</item>
+        <item>ACTION_RUN</item>
+        <item>ACTION_SYNC</item>
+        <item>ACTION_PICK_ACTIVITY</item>
+        <item>ACTION_SEARCH</item>
+        <item>ACTION_WEB_SEARCH</item>
+        <item>ACTION_FACTORY_TEST</item>
+    </string-array>
+    <string name="title_activity_info">Info</string>
+    <string name="info_text">
+        "Licensed under the GNU GPLv3 License.\n\n More info, source code and full license available at https://github.com/vetoketju/intentlauncher\n\n Please report bugs on the github issue tracker. Contributions are welcome! The application is or might be distributed on Google Play Store, F-droid repository and apk -file download on github releases page."
+    </string>
+    <string name="launcher_icon_title">Launcher Icon</string>
+    <string name="launcher_icon_text">
+        "Original icon from Flaticon by Freepik: https://www.flaticon.com/free-icon/rocket-launch_251978\n\nThe icon was converted for Android with http://inloop.github.io/svg2android/ by Juraj Novák"
+    </string>
+    <string name="third_party_title">Third party libraries and technologies</string>
+    <string name="third_party_text">
+        "Relm Database by Realm (https://realm.io/products/realm-database)\n\nKotlin sponsored and developed by JetBrains (https://kotlinlang.org/)"</string>
+    <string name="action_settings">Settings</string>
+</resources>
