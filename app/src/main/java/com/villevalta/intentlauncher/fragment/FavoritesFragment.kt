@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.Toast
 import com.villevalta.intentlauncher.App
+import com.villevalta.intentlauncher.R
 import com.villevalta.intentlauncher.adapter.ListAdapter
 import com.villevalta.intentlauncher.databinding.ListitemFavoriteBinding
 import com.villevalta.intentlauncher.dialog.EditFavoriteDialog
@@ -64,7 +65,7 @@ class FavoritesFragment : ListFragment<Favorite, FavoritesFragment.FavoriteViewH
             binding.root.setOnClickListener {
                 val result = App.instance.tryLaunch(item.action, item.uri)
                 if(!result.first){
-                    Toast.makeText(binding.root.context, result.second ?: "Launch unsuccessful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(binding.root.context, result.second ?: binding.root.context.getString(R.string.launch_error), Toast.LENGTH_SHORT).show()
                 }
             }
         }

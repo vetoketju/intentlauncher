@@ -50,8 +50,7 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Bottom
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        addMenuItem(menu, 0, Menu.CATEGORY_SYSTEM, R.drawable.ic_info_outline_primarytextcolor_24dp, "Info")
-        //menu?.add(0, 1, Int.MAX_VALUE, "Info")?.setIcon(R.drawable.ic_info_outline_primarytextcolor_24dp)?.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM)
+        addMenuItem(menu, 0, Menu.CATEGORY_SYSTEM, R.drawable.ic_info_outline_primarytextcolor_24dp, getString(R.string.info))
         return super.onCreateOptionsMenu(menu)
     }
 

@@ -12,7 +12,7 @@
         android:id="@+id/label_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name:" />
+        android:text="@string/label_name" />
 
     <EditText
         android:id="@+id/edit_name"
@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Action:" />
+        android:text="@string/label_action" />
 
     <Spinner
         android:id="@+id/spinner_actions"
@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Uri:" />
+        android:text="@string/label_uri" />
 
     <EditText
         android:id="@+id/edit_uri"

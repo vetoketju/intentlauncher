@@ -42,4 +42,14 @@
     <string name="third_party_text">
         "Relm Database by Realm (https://realm.io/products/realm-database)\n\nKotlin sponsored and developed by JetBrains (https://kotlinlang.org/)"</string>
     <string name="action_settings">Settings</string>
+    <string name="launch_error">Launch unsuccessful</string>
+    <string name="clear_all">Clear all</string>
+    <string name="edit_favorite">Edit favorite</string>
+    <string name="save">Save</string>
+    <string name="info">Info</string>
+    <string name="label_uri">Uri:</string>
+    <string name="label_action">Action:</string>
+    <string name="label_name">Name:</string>
+    <string name="default_no_name">Unnamed</string>
+    <string name="handled">handled</string>
 </resources>

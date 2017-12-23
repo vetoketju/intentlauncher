@@ -67,7 +67,7 @@ class HistoryFragment : ListFragment<History, HistoryFragment.HistoryViewHolder>
             binding.root.setOnClickListener {
                 val result = App.instance.tryLaunch(item.action, item.uri)
                 if (!result.first) {
-                    Toast.makeText(binding.root.context, result.second ?: "Launch unsuccessful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(binding.root.context, result.second ?: binding.root.context.getString(R.string.launch_error), Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -77,7 +77,7 @@ class HistoryFragment : ListFragment<History, HistoryFragment.HistoryViewHolder>
     override fun onPrepareOptionsMenu(menu: Menu?) {
         super.onPrepareOptionsMenu(menu)
         if (menu?.findItem(R.drawable.ic_delete_forever_primarytextcolor_24dp) == null) {
-            addMenuItem(menu, id, Menu.CATEGORY_SECONDARY, R.drawable.ic_delete_forever_primarytextcolor_24dp, "Clear all")
+            addMenuItem(menu, id, Menu.CATEGORY_SECONDARY, R.drawable.ic_delete_forever_primarytextcolor_24dp, getString(R.string.clear_all))
         }
     }
 
