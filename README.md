@@ -1,4 +1,4 @@
-# intentlauncher
+# Intent Launcher
 
 Licensed under the GNU GPLv3 License.
 
