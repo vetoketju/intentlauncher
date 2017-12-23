@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                app:format='@{"dd.MM.yyyy hh:mm:ss"}'
+                app:format='@{"dd.MM.yyyy HH:mm:ss"}'
                 app:time="@{item.id}"
                 tools:text="timestamp" />
 
@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text='@{"handled=" + item.successful}'
+                android:text='@{@string/handled + "=" + item.successful}'
                 tools:text="handled=false" />
 
         </LinearLayout>

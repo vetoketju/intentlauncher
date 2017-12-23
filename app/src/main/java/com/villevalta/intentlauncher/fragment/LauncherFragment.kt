@@ -27,7 +27,7 @@ class LauncherFragment : Fragment() {
         action_launch.setOnClickListener {
             val result = App.instance.tryLaunch(edit_shortcut.action, edit_shortcut.uri)
             if(!result.first){
-                Toast.makeText(context, result.second ?: "Launch unsuccessful", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, result.second ?: context?.getString(R.string.launch_error), Toast.LENGTH_SHORT).show()
             }
         }
     }

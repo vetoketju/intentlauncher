@@ -38,8 +38,8 @@ class EditFavoriteDialog : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return AlertDialog.Builder(context!!).setCancelable(true)
-                .setTitle("Edit favorite")
-                .setPositiveButton("Save") { dialog, _ -> save() }
+                .setTitle(getString(R.string.edit_favorite))
+                .setPositiveButton(getString(R.string.save)) { dialog, _ -> save() }
                 .setView(R.layout.shortcut_editor)
                 .create()
     }

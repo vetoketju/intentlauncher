@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text='@{UtilsKt.ifEmpty(item.name, "Unnamed")}'
+                android:text='@{UtilsKt.ifEmpty(item.name, @string/default_no_name)}'
                 tools:text="Shortcut name" />
 
             <TextView
