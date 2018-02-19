@@ -17,6 +17,8 @@ import com.villevalta.intentlauncher.addMenuItem
 import com.villevalta.intentlauncher.fragment.FavoritesFragment
 import com.villevalta.intentlauncher.fragment.HistoryFragment
 import com.villevalta.intentlauncher.fragment.LauncherFragment
+import com.villevalta.intentlauncher.model.Favorite
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -28,7 +30,13 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Bottom
         pager.adapter = MainAdapter(supportFragmentManager)
         pager.addOnPageChangeListener(this)
         navigation.setOnNavigationItemSelectedListener(this)
-        // navigation.selectedItemId = R.id.launcher
+        if(getFavoriteCount() == 0){
+            navigation.selectedItemId = R.id.launcher
+        }
+    }
+
+    private fun getFavoriteCount():Int{
+        return Realm.getDefaultInstance().where(Favorite::class.java).findAll().size
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
