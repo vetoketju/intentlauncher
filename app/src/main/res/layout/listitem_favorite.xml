@@ -56,6 +56,14 @@
                 android:textStyle="italic"
                 tools:text="uri" />
 
+            <TextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:id="@+id/label_extras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                tools:text="no extras" />
+
         </LinearLayout>
 
         <FrameLayout

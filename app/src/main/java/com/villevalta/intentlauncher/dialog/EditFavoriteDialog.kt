@@ -50,6 +50,7 @@ class EditFavoriteDialog : DialogFragment() {
         editor.action = fav?.action.orEmpty()
         editor.uri = fav?.uri.orEmpty()
         editor.name = fav?.name.orEmpty()
+        editor.extras = ArrayList(realm?.copyFromRealm(fav?.extras))
     }
 
     private fun save() {
@@ -58,6 +59,8 @@ class EditFavoriteDialog : DialogFragment() {
         fav?.name = editor.name
         fav?.uri = editor.uri
         fav?.action = editor.action
+        fav?.extras?.clear()
+        fav?.extras?.addAll(editor.extras)
         realm?.commitTransaction()
     }
 
