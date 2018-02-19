@@ -1,6 +1,9 @@
 package com.villevalta.intentlauncher.fragment
 
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
+import android.view.ViewGroup
 import android.widget.Toast
 import com.villevalta.intentlauncher.App
 import com.villevalta.intentlauncher.R
@@ -65,11 +68,13 @@ class HistoryFragment : ListFragment<History, HistoryFragment.HistoryViewHolder>
                 return@setOnMenuItemClickListener false
             }
             binding.root.setOnClickListener {
-                val result = App.instance.tryLaunch(item.action, item.uri)
+                val result = App.instance.tryLaunch(item.action, item.uri, item.extras)
                 if (!result.first) {
-                    Toast.makeText(binding.root.context, result.second ?: binding.root.context.getString(R.string.launch_error), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(binding.root.context, result.second
+                            ?: binding.root.context.getString(R.string.launch_error), Toast.LENGTH_SHORT).show()
                 }
             }
+            binding.labelExtras.text = binding.root.context.resources.getQuantityString(R.plurals.has_extras, item.extras.size, item.extras.size)
         }
 
     }

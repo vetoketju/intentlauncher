@@ -5,12 +5,15 @@ import android.databinding.BindingAdapter
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.ActionMenuView
 import android.support.v7.widget.RecyclerView
+import android.text.InputType
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
 import com.villevalta.intentlauncher.fragment.FavoritesFragment
 import com.villevalta.intentlauncher.fragment.HistoryFragment
+import com.villevalta.intentlauncher.model.Extra
 import com.villevalta.intentlauncher.model.Favorite
 import com.villevalta.intentlauncher.model.History
 import com.villevalta.intentlauncher.view.ListItemDivider
@@ -47,12 +50,23 @@ fun setRecyclerDivider(recycler: RecyclerView, drawable: Drawable) {
     recycler.addItemDecoration(ListItemDivider(drawable))
 }
 
+@BindingAdapter("withExtra")
+fun setupEditTextWithExtra(editText: EditText, extra: Extra){
+    when(extra.getType()){
+        Extra.Type.String -> editText.inputType = InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
+        Extra.Type.Double, Extra.Type.Float -> editText.inputType = InputType.TYPE_NUMBER_FLAG_DECIMAL
+        else -> editText.inputType = InputType.TYPE_NUMBER_FLAG_SIGNED
+    }
+
+}
+
 fun String.ifEmpty(default: String): String = if (equals("")) default else this
 
 fun convertToFavorite(item: History): Favorite {
     val fav = Favorite()
     fav.action = item.action
     fav.uri = item.uri
+    fav.extras = item.extras
     return fav
 }
 

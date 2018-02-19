@@ -25,7 +25,7 @@ class LauncherFragment : Fragment() {
         super.onResume()
         edit_shortcut.setShowName(false)
         action_launch.setOnClickListener {
-            val result = App.instance.tryLaunch(edit_shortcut.action, edit_shortcut.uri)
+            val result = App.instance.tryLaunch(edit_shortcut.action, edit_shortcut.uri, edit_shortcut.extras)
             if(!result.first){
                 Toast.makeText(context, result.second ?: context?.getString(R.string.launch_error), Toast.LENGTH_SHORT).show()
             }

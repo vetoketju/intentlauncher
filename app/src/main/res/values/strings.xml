@@ -50,6 +50,12 @@
     <string name="label_uri">Uri:</string>
     <string name="label_action">Action:</string>
     <string name="label_name">Name:</string>
+    <string name="label_extras">Extras:</string>
     <string name="default_no_name">Unnamed</string>
     <string name="handled">handled</string>
+    <string name="add_extra">Add extra</string>
+    <plurals name="has_extras">
+        <item quantity="one">1 extra</item>
+        <item quantity="other">%d extras</item>
+    </plurals>
 </resources>

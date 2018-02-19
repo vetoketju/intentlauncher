@@ -63,11 +63,12 @@ class FavoritesFragment : ListFragment<Favorite, FavoritesFragment.FavoriteViewH
                 return@setOnMenuItemClickListener false
             }
             binding.root.setOnClickListener {
-                val result = App.instance.tryLaunch(item.action, item.uri)
+                val result = App.instance.tryLaunch(item.action, item.uri, item.extras)
                 if(!result.first){
                     Toast.makeText(binding.root.context, result.second ?: binding.root.context.getString(R.string.launch_error), Toast.LENGTH_SHORT).show()
                 }
             }
+            binding.labelExtras.text = binding.root.context.resources.getQuantityString(R.plurals.has_extras, item.extras.size, item.extras.size)
         }
     }
 

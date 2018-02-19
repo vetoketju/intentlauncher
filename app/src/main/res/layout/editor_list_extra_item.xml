@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="extra"
+            type="com.villevalta.intentlauncher.model.Extra" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:padding="@dimen/text_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground">
+
+        <!-- todo: add type dropdown
+        <android.support.v7.widget.AppCompatSpinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+
+        <EditText
+            android:id="@+id/edit_key"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="Key"
+            android:text="@{extra.key}"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <!--app:withExtra="@{extra}"-->
+        <EditText
+            android:layout_marginRight="@dimen/text_margin"
+            android:id="@+id/edit_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Value"
+            android:text="@{extra.value}"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@id/edit_key"
+            app:layout_constraintRight_toLeftOf="@+id/action_remove" />
+
+        <ImageView
+            android:id="@+id/action_remove"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:tint="#d32f2f"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_remove_circle_24dp" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
