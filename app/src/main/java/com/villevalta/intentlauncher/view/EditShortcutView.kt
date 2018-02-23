@@ -45,7 +45,6 @@ class EditShortcutView : FrameLayout {
     }
 
     fun setShowName(show: Boolean) {
-        label_name.visibility = toVisibility(show)
         edit_name.visibility = toVisibility(show)
     }
 

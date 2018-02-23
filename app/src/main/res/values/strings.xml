@@ -47,13 +47,15 @@
     <string name="edit_favorite">Edit favorite</string>
     <string name="save">Save</string>
     <string name="info">Info</string>
-    <string name="label_uri">Uri:</string>
+    <string name="label_uri">Uri</string>
     <string name="label_action">Action:</string>
-    <string name="label_name">Name:</string>
+    <string name="label_name">Name</string>
     <string name="label_extras">Extras:</string>
     <string name="default_no_name">Unnamed</string>
     <string name="handled">handled</string>
     <string name="add_extra">Add extra</string>
+    <string name="hint_key">Key</string>
+    <string name="hint_value">Value</string>
     <plurals name="has_extras">
         <item quantity="one">1 extra</item>
         <item quantity="other">%d extras</item>

@@ -12,16 +12,17 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
-        <TextView
-            android:id="@+id/label_name"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_name" />
+            android:hint="@string/label_name">
 
-        <EditText
-            android:id="@+id/edit_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textNoSuggestions" />
+        </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -34,15 +35,17 @@
             android:layout_height="wrap_content"
             android:spinnerMode="dropdown" />
 
-        <TextView
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_uri" />
+            android:hint="@string/label_uri">
 
-        <EditText
-            android:id="@+id/edit_uri"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edit_uri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textNoSuggestions" />
+        </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:layout_width="match_parent"
