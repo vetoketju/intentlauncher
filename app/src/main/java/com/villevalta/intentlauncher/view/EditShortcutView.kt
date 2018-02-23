@@ -95,10 +95,11 @@ class ExtrasRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
         if (holder is ItemViewHolder) {
-            holder.bind(items[position])
+            holder.extra = items[position]
             holder.binding.actionRemove.setOnClickListener {
-                items.removeAt(position)
-                notifyItemRemoved(position)
+                val posInItems = items.indexOf(holder.extra)
+                items.remove(holder.extra)
+                notifyItemRemoved(posInItems)
             }
         }
     }
@@ -112,19 +113,23 @@ class ExtrasRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class AddViewHolder(val view: View) : RecyclerView.ViewHolder(view)
     class ItemViewHolder(val binding: EditorListExtraItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(extra: Extra) {
-            binding.extra = extra
-            binding.editKey.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
-                if (!hasFocus) {
-                    extra.key = binding.editKey.text.toString()
+
+        var extra: Extra
+            set(value) {
+                binding.extra = value
+                binding.editKey.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+                    if (!hasFocus) {
+                        extra.key = binding.editKey.text.toString()
+                    }
+                }
+                binding.editValue.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+                    if (!hasFocus) {
+                        extra.value = binding.editValue.text.toString()
+                    }
                 }
             }
-            binding.editValue.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
-                if (!hasFocus) {
-                    extra.value = binding.editValue.text.toString()
-                }
-            }
-        }
+            get() = binding.extra!!
+
     }
 
 }
