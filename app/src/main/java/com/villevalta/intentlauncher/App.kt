@@ -5,8 +5,10 @@ import android.content.Intent
 import android.net.Uri
 import com.villevalta.intentlauncher.model.Extra
 import com.villevalta.intentlauncher.model.History
+import io.realm.DynamicRealm
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import io.realm.RealmMigration
 
 /**
  * Created by villevalta on 11/12/17.
@@ -16,7 +18,7 @@ class App : Application() {
     override fun onCreate() {
         instance = this
         Realm.init(this)
-        Realm.setDefaultConfiguration(RealmConfiguration.Builder().deleteRealmIfMigrationNeeded().build())
+        Realm.setDefaultConfiguration(RealmConfiguration.Builder().schemaVersion(1).migration(Migrations()).build())
         super.onCreate()
     }
 
@@ -53,4 +55,13 @@ class App : Application() {
     companion object {
         lateinit var instance: App
     }
+
+    class Migrations : RealmMigration {
+        override fun migrate(realm: DynamicRealm?, oldVersion: Long, newVersion: Long) {
+            // version 0 had deleteIfMigrationNeeded
+            // version 1 has extras in History and Favorite classes
+            // version 2 should be the first with migration logic here
+        }
+    }
+
 }
